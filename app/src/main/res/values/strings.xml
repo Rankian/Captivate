@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">三杰</string>
+
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
+
+    <string name="transition_photos">transition_animation_news_photos</string>
+    <string name="title">标题</string>
+
+    <string name="love">2017.2.14 陪你的第一个情人节。
+        时间见证着爱的点滴，空间弥漫着相思的努力，
+        在这爱的世界里，我一无所有，没能给你更多，
+        在情感的小站里，你是永远的主人，有我伴着你宠着你，一生一世。
+        对于世界而言，你是一个人；但是对于我而言，
+        你是我的整个世界，只愿和你执子之手，与子偕老。</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="copyright">Copyright © 2016-2017 Sanjie. All Rights Reserved.</string>
+</resources>

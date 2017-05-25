@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/navigation_header_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/nav_header_bg"
+        android:scaleType="centerCrop"/>
+
+    <com.sanjie.zy.widget.view.ZYCircleImageView
+        android:id="@+id/user_avatar_iv"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        android:src="@mipmap/zy_logo"/>
+
+    <TextView
+        android:id="@+id/username_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="24dp"
+        android:padding="16dp"
+        tools:text="SanJie"
+        android:textColor="@android:color/white"/>
+    <TextView
+        android:id="@+id/signature_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="16dp"
+        tools:text="动次打次 动次打次 动次打次"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"/>
+
+</FrameLayout>

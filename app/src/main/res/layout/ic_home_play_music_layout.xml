@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/gray_30"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/layout_small_padding"
+        android:paddingRight="@dimen/layout_small_padding">
+
+        <com.sanjie.zy.widget.view.ZYCircleImageView
+            android:id="@+id/home_play_bar_cover_iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="@dimen/layout_small_margin"
+            android:layout_marginRight="@dimen/layout_small_margin"
+            tools:src="@mipmap/default_avatar" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_small_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/home_play_bar_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:maxLines="1"
+                android:padding="@dimen/layout_small_padding"
+                android:textColor="@color/gray_120"
+                android:textSize="@dimen/font_14_size"
+                tools:text="三生有幸" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/home_play_bar_artist_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_small_padding"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:textColor="@color/gray_80"
+                android:textSize="@dimen/font_12_size"
+                tools:text="石头" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/home_play_bar_play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_small_padding"
+            app:srcCompat="@mipmap/icon_play" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/home_play_bar_next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_small_padding"
+            app:srcCompat="@mipmap/icon_play_next" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/home_play_bar_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:max="100"
+        android:layout_height="2dp"
+        android:progressDrawable="@drawable/play_progress_bar_style" />
+
+</LinearLayout>

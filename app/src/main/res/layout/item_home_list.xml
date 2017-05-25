@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:toos="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/layout_small_margin"
+    card_view:cardBackgroundColor="@color/holo_orange_light"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="3dp"
+    card_view:contentPadding="@dimen/layout_normal_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/item_home_image_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/zy_logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_home_content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/layout_small_padding"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14_size"
+                android:maxLines="3"
+                android:ellipsize="end"
+                toos:text="我是item项的内容噢" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_home_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12_size"
+                toos:text="2017.04.18" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

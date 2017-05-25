@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/container_background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_album_details">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/news_detail_from_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/main_color"
+            android:textSize="12sp"
+            android:text="情人节告白 02-14 17:24" />
+        <!--        android:layout_below="@id/news_detail_title_tv"
+                android:layout_marginTop="10dp"-->
+
+        <TextView
+            android:id="@+id/news_detail_body_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/news_detail_from_tv"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="6dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/font_16_size"
+            android:text="@string/love" />
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

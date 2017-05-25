@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@mipmap/register_background">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/register_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/icon_back"
+        android:layout_marginTop="@dimen/layout_middle_margin"
+        android:padding="@dimen/layout_normal_padding"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_large_margin"
+                android:background="@drawable/shape_normal_white_background"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/layout_normal_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/icon_phone" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/register_phone_et"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/translucent_100"
+                        android:hint="Phone"
+                        android:lines="1"
+                        android:inputType="phone"
+                        android:padding="@dimen/layout_small_padding"
+                        android:textColor="@color/gray_80"
+                        android:textSize="@dimen/font_14_size" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/register_code_btn"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="获取验证码"
+                        android:textColor="@color/gray_80"
+                        android:textSize="@dimen/font_12_size" />
+
+                </LinearLayout>
+
+                <include layout="@layout/ic_under_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/layout_normal_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/icon_code" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/register_code_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/translucent_100"
+                        android:hint="Verification code"
+                        android:lines="1"
+                        android:inputType="number"
+                        android:padding="@dimen/layout_small_padding"
+                        android:textColor="@color/gray_80"
+                        android:textSize="@dimen/font_14_size" />
+
+                </LinearLayout>
+
+                <include layout="@layout/ic_under_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/layout_normal_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/icon_nickname" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/register_nickname_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/translucent_100"
+                        android:hint="Nickname"
+                        android:lines="1"
+                        android:inputType="text"
+                        android:padding="@dimen/layout_small_padding"
+                        android:textColor="@color/gray_80"
+                        android:textSize="@dimen/font_14_size" />
+
+                </LinearLayout>
+
+                <include layout="@layout/ic_under_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/layout_normal_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/icon_password" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/register_password_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/translucent_100"
+                        android:hint="Password"
+                        android:lines="1"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/layout_small_padding"
+                        android:textColor="@color/gray_80"
+                        android:textSize="@dimen/font_14_size" />
+
+                </LinearLayout>
+
+                <include layout="@layout/ic_under_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/layout_normal_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/icon_email" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/register_email_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/translucent_100"
+                        android:hint="Email"
+                        android:lines="1"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/layout_small_padding"
+                        android:textColor="@color/gray_80"
+                        android:textSize="@dimen/font_14_size" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/register_btn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/layout_large_margin"
+                android:background="@drawable/selector_register_button_background"
+                android:text="Sign Up"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

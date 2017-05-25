@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/image_splash" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@mipmap/zy_logo"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/layout_small_margin"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/layout_small_padding"
+        android:text="@string/copyright"
+        android:textColor="@color/holo_blue_light"
+        android:textSize="@dimen/font_12_size" />
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_user_center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/icon_smile"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="啊哈哈哈，啥子都没得"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/font_20_size"
+            android:padding="@dimen/layout_normal_padding"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_out_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_margin="@dimen/layout_middle_margin"
+        android:background="@drawable/selector_button_background"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_16_size" />
+
+</LinearLayout>

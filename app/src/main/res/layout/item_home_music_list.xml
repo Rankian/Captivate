@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/layout_small_margin"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="3dp"
+    card_view:contentPadding="@dimen/layout_small_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.sanjie.zy.widget.view.ZYCircleImageView
+            android:id="@+id/item_music_cover_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_small_margin"
+            tools:src="@mipmap/default_avatar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_small_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_music_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_small_padding"
+                android:textColor="@color/gray_120"
+                android:textSize="@dimen/font_14_size"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                tools:text="三生有幸" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/item_music_artist_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/layout_small_padding"
+                    android:textColor="@color/gray_80"
+                    android:textSize="@dimen/font_12_size"
+                    tools:text="石头" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/item_music_duration_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_small_padding"
+                    android:textColor="@color/gray_80"
+                    android:textSize="@dimen/font_14_size"
+                    tools:text="04:45" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

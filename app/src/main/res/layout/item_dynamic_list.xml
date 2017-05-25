@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/layout_normal_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.sanjie.zy.widget.view.ZYCircleImageView
+            android:id="@+id/item_dynamic_author_avatar_iv"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            tools:src="@mipmap/default_avatar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_dynamic_author_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/layout_small_padding"
+                android:paddingLeft="@dimen/layout_normal_padding"
+                android:paddingRight="@dimen/layout_normal_padding"
+                android:textColor="@color/orange_80"
+                android:textSize="@dimen/font_14_size"
+                tools:text="中国区求报道" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_dynamic_source_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/layout_normal_padding"
+                android:paddingRight="@dimen/layout_normal_padding"
+                android:textColor="@color/gray_110"
+                android:textSize="@dimen/font_12_size"
+                tools:text="6分钟前 来自 Iphone 7 plus" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_dynamic_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3dp"
+        android:paddingBottom="@dimen/layout_normal_padding"
+        android:paddingTop="@dimen/layout_normal_padding"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_14_size"
+        tools:text="都说小米手机难抢，如今这款打磨了七年的全新旗舰小米6更是一机难求。那么那些幸运抢到手机的朋友们请举起手告诉我你们的心情好么？什么，你说抢到了也并不开心这是为什么呢？原来这位朋友买到了一台“错版”的小米6。" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/item_dynamic_photos_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:scrollbars="none"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/item_dynamic_forwarding_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/icon_forwarding" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="转发"
+                android:textColor="@color/gray_90"
+                android:textSize="@dimen/font_14_size" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0.6dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_80" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/icon_comment" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_dynamic_comment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                tools:text="18"
+                android:textColor="@color/gray_90"
+                android:textSize="@dimen/font_14_size" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0.6dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_80" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/icon_like" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_dynamic_like_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                tools:text="5"
+                android:textColor="@color/gray_90"
+                android:textSize="@dimen/font_14_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

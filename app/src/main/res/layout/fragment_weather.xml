@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/image_weather_bg_1"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:padding="@dimen/layout_large_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/weather_city_name_tv"
+                        style="@style/NormalWhiteTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="重庆" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/weather_info_tv"
+                        style="@style/NormalWhiteTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="晴" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/weather_air_quality_tv"
+                        style="@style/NormalWhiteTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        tools:text="空气质量" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/weather_humidity_tv"
+                        style="@style/NormalWhiteTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="65" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/weather_address_tv"
+                    style="@style/NormalWhiteTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_12_size"
+                    tools:text="你是我最想要的，我是你最不需要的" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/weather_update_time_tv"
+                    style="@style/NormalWhiteTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/font_20_size"
+                    android:textStyle="bold"
+                    tools:text="14:58" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    app:srcCompat="@mipmap/weather_sunny" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/weather_today_time_tv"
+                    style="@style/NormalWhiteTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Thu 25 April 2017" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/weather_temp_tv"
+                        style="@style/NormalWhiteTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="80sp"
+                        tools:text="21℃" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/layout_normal_margin"
+                        android:layout_marginRight="@dimen/layout_normal_margin"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/weather_temp_low_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/layout_small_padding"
+                            android:textColor="@color/gray_110"
+                            android:textSize="@dimen/font_16_size"
+                            tools:text="21℃" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/weather_temp_hight_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/layout_small_padding"
+                            android:textColor="@color/gray_110"
+                            android:textSize="@dimen/font_16_size"
+                            tools:text="27℃" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/weather_dressing_advice_tv"
+                    style="@style/NormalWhiteTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_12_size"
+                    tools:text="你是我最想要的，我是你最不需要的" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

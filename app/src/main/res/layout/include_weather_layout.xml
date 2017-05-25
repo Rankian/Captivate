@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:background="@color/main_color">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_middle_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/discovery_weather_location_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14_size"
+                tools:text="渝北区  文汇路" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/discovery_weather_temp_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="55sp"
+                tools:text="21°" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/discovery_weather_info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size"
+                    tools:text="晴" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0.8dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/layout_small_margin"
+                    android:layout_marginRight="@dimen/layout_small_margin"
+                    android:background="@color/white" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/icon_leaves" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/discovery_weather_dressing_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size"
+                    tools:text="空气良" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="@dimen/layout_small_padding"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/discovery_weather_wind_direction_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_small_padding"
+                    tools:text="东南风"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/discovery_weather_wind_strength_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_small_padding"
+                    tools:text="2级"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0.8dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/layout_small_margin"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_small_padding"
+                    android:text="相对湿度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/discovery_weather_humidity_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_small_padding"
+                    tools:text="38%"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0.8dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/layout_small_margin"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_small_padding"
+                    android:text="体感温度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/discovery_weather_soma_temp_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_small_padding"
+                    tools:text="20°"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/discovery_weather_future_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/layout_big_padding">
+
+    </LinearLayout>
+
+</LinearLayout>

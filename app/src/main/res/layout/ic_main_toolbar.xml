@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    style="@style/Toolbar">
+
+    <RadioGroup
+        android:id="@+id/main_radio_tab"
+        android:layout_width="100dp"
+        android:layout_height="27dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            style="@style/MainRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_main_left_radio_button"
+            android:text="主页"
+            android:textSize="@dimen/font_14_size" />
+
+        <RadioButton
+            style="@style/MainRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_main_right_radio_button"
+            android:text="天气"
+            android:textSize="@dimen/font_14_size" />
+
+    </RadioGroup>
+
+</android.support.v7.widget.Toolbar>

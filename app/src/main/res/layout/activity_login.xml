@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/soft_resize_frame_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/image_login"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.sanjie.zy.widget.view.ZYCircleImageView
+            android:id="@+id/login_user_avatar_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            tools:src="@mipmap/zy_logo"
+            android:layout_margin="@dimen/layout_large_margin"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_normal_background"
+            android:layout_margin="@dimen/layout_normal_margin"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/login_username_dt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/translucent_100"
+                android:gravity="center"
+                android:inputType="phone"
+                android:padding="@dimen/layout_normal_padding"
+                android:hint="手机号码"
+                android:textColorHint="@color/gray_60"
+                android:textColor="@color/gray_110"
+                android:textSize="@dimen/font_16_size"
+                tools:text="18875031480" />
+
+            <include layout="@layout/ic_under_line" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/login_password_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/translucent_100"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:padding="@dimen/layout_normal_padding"
+                android:hint="密码"
+                android:textColorHint="@color/gray_60"
+                android:textColor="@color/gray_110"
+                android:textSize="@dimen/font_16_size"
+                tools:text="123456" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/layout_middle_margin"
+            android:background="@drawable/selector_button_background"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16_size" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/login_found_password_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:padding="@dimen/layout_middle_padding"
+        android:text="找回密码"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_14_size" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/register_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:padding="@dimen/layout_middle_padding"
+        android:text="新用户"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_14_size" />
+
+</FrameLayout>

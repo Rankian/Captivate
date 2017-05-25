@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/layout_small_margin"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="3dp"
+    card_view:contentPadding="@dimen/layout_small_padding">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/item_travel_photo_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_travel_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="哦个咋地"
+        android:layout_gravity="right|bottom"
+        android:padding="@dimen/layout_small_padding"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_22_size"/>
+
+
+</android.support.v7.widget.CardView>

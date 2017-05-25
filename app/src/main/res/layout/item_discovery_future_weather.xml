@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/layout_middle_padding"
+    android:paddingRight="@dimen/layout_middle_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/layout_middle_padding"
+        android:paddingBottom="@dimen/layout_middle_padding">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_future_weather_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_small_padding"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_14_size"
+            tools:text="今天" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_future_weather_info_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/layout_small_padding"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_14_size"
+            tools:text="晴转多云" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_future_weather_temp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_small_padding"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_14_size"
+            tools:text="30°/17°" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_future_weather_under_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/gray_40"/>
+
+</LinearLayout>

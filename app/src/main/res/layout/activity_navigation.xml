@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@color/white">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/navigation_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.sanjie.zy.widget.indicatior.ZYPageIndicatorView
+        android:id="@+id/view_pager_indicator_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/layout_small_margin"
+        app:orientation="horizontal"
+        app:viewPager="@id/navigation_view_pager"
+        app:interactiveAnimation="true"
+        app:animationType="thinWorm"
+        app:dynamicCount="true"/>
+
+</FrameLayout>

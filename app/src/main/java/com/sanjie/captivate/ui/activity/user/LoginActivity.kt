@@ -57,6 +57,12 @@ class LoginActivity : BaseActivity(), UserInitPresenter.LoginView {
                 .subscribe {
                     forwardActivity(RegisterActivity::class.java, null)
                 }
+        RxView.clicks(login_found_password_btn)
+                .throttleFirst(3, TimeUnit.SECONDS)
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    forwardActivity(RetrievePasswordActivity::class.java, null)
+                }
 
         ZYKeyboardVisibilityEvent.setEventListener(this@LoginActivity, {
             when(it){
@@ -103,11 +109,11 @@ class LoginActivity : BaseActivity(), UserInitPresenter.LoginView {
         val loginName = login_username_dt.text.toString()
         val loginPassword = login_password_et.text.toString()
 
-        if (ZYEmptyUtils.isEmpty(loginName) || ZYEmptyUtils.isEmpty(loginName.trim())) {
+        if (ZYEmptyUtils.isEmpty(loginName) or ZYEmptyUtils.isEmpty(loginName.trim())) {
             ZYToast.warning("请输入用户名")
             return false
         }
-        if (ZYEmptyUtils.isEmpty(loginPassword) || ZYEmptyUtils.isEmpty(loginPassword.trim())) {
+        if (ZYEmptyUtils.isEmpty(loginPassword) or ZYEmptyUtils.isEmpty(loginPassword.trim())) {
             ZYToast.warning("请输入密码")
             return false
         }

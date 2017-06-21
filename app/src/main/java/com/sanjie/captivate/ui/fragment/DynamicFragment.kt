@@ -1,6 +1,7 @@
 package com.sanjie.captivate.ui.fragment
 
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import com.sanjie.captivate.R
 import com.sanjie.captivate.adapter.DynamicAdapter
 import com.sanjie.captivate.base.BaseFragment
@@ -13,13 +14,14 @@ import com.sanjie.zy.adpter.ZYRecyclerViewAdapter
 import com.sanjie.zy.adpter.decoration.DividerDecoration
 import com.sanjie.zy.utils.RxBus
 import com.sanjie.zy.utils.ZYDensityUtils
+import com.sanjie.zy.widget.ZYToast
 import kotlinx.android.synthetic.main.fragment_dynamic.*
 import kotlinx.android.synthetic.main.include_fragment_title_bar.*
 
 /**
  * Created by SanJie on 2017/5/22.
  */
-class DynamicFragment : BaseFragment(), DynamicPresenter.LoadView {
+class DynamicFragment : BaseFragment(), DynamicPresenter.LoadView, DynamicPresenter.LikeView {
 
     var dynamicPresenter: DynamicPresenter? = null
 
@@ -59,10 +61,23 @@ class DynamicFragment : BaseFragment(), DynamicPresenter.LoadView {
                 dynamicPresenter!!.load(limit)
             }
         })
+        mAdapter!!.setOperateListener(object : DynamicAdapter.OnOperateListener{
+            override fun onForwarding(position: Int) {
+                ZYToast.warning("想转发到哪儿去嘛")
+            }
+
+            override fun onComment(position: Int) {
+                ZYToast.warning("程序员哥哥还在开发中")
+            }
+
+            override fun onLike(position: Int) {
+                dynamicPresenter!!.like(dynamicList!![position])
+            }
+        })
     }
 
     override fun processLogic() {
-        dynamicPresenter = DynamicPresenterImpl(this)
+        dynamicPresenter = DynamicPresenterImpl(this, this)
         dynamicPresenter!!.load(limit)
 
         RxBus.singleton().toObservable(DynamicEvent::class.java)
@@ -95,5 +110,9 @@ class DynamicFragment : BaseFragment(), DynamicPresenter.LoadView {
         }
         this.dynamicList!!.addAll(dynamicList)
         mAdapter!!.notifyDataSetChanged()
+    }
+
+    override fun likeResult(likeCount: Int, dynamic: Dynamic) {
+
     }
 }

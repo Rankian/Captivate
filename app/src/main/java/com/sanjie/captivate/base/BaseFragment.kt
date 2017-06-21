@@ -3,12 +3,9 @@ package com.sanjie.captivate.base
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import butterknife.ButterKnife
 import com.sanjie.zy.utils.ZYKeyboardUtils
 
 /**

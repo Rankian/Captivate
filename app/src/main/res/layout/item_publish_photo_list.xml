@@ -2,8 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/item_publish_photo_iv"
@@ -20,7 +19,6 @@
         android:scaleType="centerCrop"
         android:layout_gravity="end"
         android:padding="@dimen/layout_small_margin"
-        android:layout_margin="@dimen/layout_small_margin"
         app:srcCompat="@mipmap/icon_delete" />
 
 </FrameLayout>

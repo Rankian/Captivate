@@ -10,12 +10,12 @@ import android.widget.TextView
 import cn.bmob.v3.BmobUser
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding2.view.RxView
-import com.jakewharton.rxbinding2.widget.RxRadioGroup
 import com.sanjie.captivate.R
 import com.sanjie.captivate.base.BaseActivity
 import com.sanjie.captivate.common.AppConfig
 import com.sanjie.captivate.event.UserUpdateEvent
 import com.sanjie.captivate.mvp.model.User
+import com.sanjie.captivate.ui.activity.app.AppActivity
 import com.sanjie.captivate.ui.activity.dynamic.PublishDynamicActivity
 import com.sanjie.captivate.ui.activity.user.UserCenterActivity
 import com.sanjie.captivate.ui.fragment.DynamicFragment
@@ -30,7 +30,6 @@ import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil
 import com.sanjie.zy.widget.ZYToast
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.Observable
-import io.reactivex.rxkotlin.toObservable
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.concurrent.TimeUnit
 
@@ -97,10 +96,10 @@ class MainActivity : BaseActivity() {
     fun initNavigation() {
 
         headerView = navigation_view.getHeaderView(0)
-        userAvatar = headerView!!.findViewById(R.id.user_avatar_iv) as ImageView
-        usernameTv = headerView!!.findViewById(R.id.username_tv) as TextView
-        userSignatureTv = headerView!!.findViewById(R.id.signature_tv) as TextView
-        headerViewContainer = headerView!!.findViewById(R.id.navigation_header_bg) as ImageView
+        userAvatar = headerView!!.findViewById<ImageView>(R.id.user_avatar_iv)
+        usernameTv = headerView!!.findViewById<TextView>(R.id.username_tv)
+        userSignatureTv = headerView!!.findViewById<TextView>(R.id.signature_tv)
+        headerViewContainer = headerView!!.findViewById<ImageView>(R.id.navigation_header_bg)
 
         initUser()
         //用户头像
@@ -115,11 +114,11 @@ class MainActivity : BaseActivity() {
 
         navigation_view.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.collection_menu -> ZYToast.success("你收藏东西没得嘛")
-                R.id.set_menu -> ZYToast.success("想设置，没门儿")
-                R.id.suggest_menu -> ZYToast.success("你说，你想啷个")
+                R.id.app_menu -> forwardActivity(AppActivity::class.java, null)
+                R.id.set_menu -> ZYToast.info("想设置，没门儿")
+                R.id.suggest_menu -> forwardActivity(TitleItemDecorationActivity::class.java, null)
                 R.id.update_menu -> {
-                    ZYToast.success("你莫点了嘛，没得更新啊")
+                    ZYToast.info("你莫点了嘛，没得更新啊")
                 }
                 R.id.about_menu -> forwardActivity(AboutActivity::class.java, null)
                 R.id.exit_menu -> exit()
@@ -133,6 +132,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun processLogic() {
+
         initFragment()
         main_page_radio_group.setOnCheckedChangeListener { group, checkedId ->
             (0..group.childCount - 1)

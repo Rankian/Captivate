@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/layout_small_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/item_app_icon_iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/shape_app_icon_background"
+            tools:src="@mipmap/icon_qq" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/layout_normal_padding"
+            android:paddingRight="@dimen/layout_normal_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_app_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/layout_small_padding"
+                android:paddingRight="@dimen/layout_small_padding"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_12_size"
+                tools:text="QQ" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/layout_small_padding"
+                android:paddingRight="@dimen/layout_small_padding">
+
+                <RatingBar
+                    android:id="@+id/item_app_score_rb"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="3.5" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/item_app_software_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/gray_110"
+                    android:textSize="@dimen/font_10_size"
+                    tools:text="42.8 M" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_app_intro_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="@dimen/layout_small_padding"
+                android:textColor="@color/gray_110"
+                android:textSize="@dimen/font_10_size"
+                tools:text="乐在沟通17年，聊天欢乐9亿人" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_app_operate_btn"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@drawable/shape_app_install_background"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:text="安装"
+            android:textColor="@color/holo_orange_light"
+            android:textSize="@dimen/font_10_size" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/item_app_download_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:max="100"
+        android:progressDrawable="@drawable/play_progress_bar_style" />
+
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.sanjie.captivate.base
 
 import android.content.Intent
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
@@ -30,12 +32,11 @@ open abstract class BaseActivity : AppCompatActivity(), BGASwipeBackLayout.Panel
         super.onCreate(savedInstanceState)
         ZYActivityStack.getInstance().addActivity(this)
         setContentView(getLayoutId())
+        initView()
+        processLogic()
         if (hasToolbar()) {
             initAppToolBar()
         }
-
-        initView()
-        processLogic()
         checkPermissions()
     }
 
@@ -213,6 +214,22 @@ open abstract class BaseActivity : AppCompatActivity(), BGASwipeBackLayout.Panel
      */
     fun executeSwipeBackAnim() {
         overridePendingTransition(R.anim.activity_swipeback_enter, R.anim.activity_swipeback_exit)
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        if(newConfig!!.fontScale.toInt() != 1)
+            resources
+        super.onConfigurationChanged(newConfig)
+    }
+
+    override fun getResources(): Resources {
+        val res = super.getResources()
+        if(res.configuration.fontScale.toInt() != 1){
+            val newConfig = Configuration()
+            newConfig.setToDefaults()
+            res.updateConfiguration(newConfig, res.displayMetrics)
+        }
+        return res
     }
 
     override fun onDestroy() {

@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="none">
         <item
-            android:id="@+id/collection_menu"
+            android:id="@+id/app_menu"
             android:icon="@mipmap/icon_collection"
-            android:title="我的收藏" />
+            android:title="应用中心" />
         <item
             android:id="@+id/set_menu"
             android:icon="@mipmap/icon_option"

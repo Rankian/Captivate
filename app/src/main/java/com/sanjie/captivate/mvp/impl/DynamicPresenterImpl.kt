@@ -5,11 +5,11 @@ import cn.bmob.v3.BmobQuery
 import cn.bmob.v3.datatype.BmobFile
 import cn.bmob.v3.exception.BmobException
 import cn.bmob.v3.listener.SaveListener
+import cn.bmob.v3.listener.UpdateListener
 import cn.bmob.v3.listener.UploadFileListener
 import com.sanjie.captivate.mvp.model.Dynamic
 import com.sanjie.captivate.mvp.presenter.DynamicPresenter
 import com.sanjie.zy.utils.ZYCompressHelper
-import com.sanjie.zy.utils.log.ZYLog
 import com.sanjie.zy.widget.ZYToast
 import io.reactivex.rxkotlin.toObservable
 import java.io.File
@@ -18,18 +18,19 @@ import java.io.File
  * Created by SanJie on 2017/5/22.
  */
 class DynamicPresenterImpl : DynamicPresenter {
-
     var context: Context? = null
     var publishView: DynamicPresenter.PublishView? = null
     var loadView: DynamicPresenter.LoadView? = null
+    var likeView: DynamicPresenter.LikeView? = null
 
     constructor(context: Context, publishView: DynamicPresenter.PublishView?) {
         this.context = context
         this.publishView = publishView
     }
 
-    constructor(loadView: DynamicPresenter.LoadView?) {
+    constructor(loadView: DynamicPresenter.LoadView?, likeView: DynamicPresenter.LikeView?) {
         this.loadView = loadView
+        this.likeView = likeView
     }
 
     constructor()
@@ -46,9 +47,19 @@ class DynamicPresenterImpl : DynamicPresenter {
         query.order("-createdAt")
         query.findObjectsObservable(Dynamic::class.java)
                 .subscribe {
-                    ZYLog.d("DynamicPresenterImpl：${it.size}")
                     loadView!!.loadResult(it)
                 }
+    }
+
+    override fun like(dynamic: Dynamic) {
+        dynamic.like = dynamic.like!! + 1
+        dynamic.update(dynamic.objectId, object : UpdateListener() {
+            override fun done(e: BmobException?) {
+                when (e == null) {
+                    true -> likeView!!.likeResult(dynamic.like!!, dynamic)
+                }
+            }
+        })
     }
 
     private fun uploadPhoto(dynamic: Dynamic) {
@@ -80,7 +91,7 @@ class DynamicPresenterImpl : DynamicPresenter {
                             }
                         })
                     }
-        }else{
+        } else {
             dynamicPublish(dynamic)
         }
     }
@@ -99,4 +110,5 @@ class DynamicPresenterImpl : DynamicPresenter {
             }
         })
     }
+
 }

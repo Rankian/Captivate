@@ -15,7 +15,13 @@ interface DynamicPresenter {
         fun loadResult(dynamicList: List<Dynamic>)
     }
 
+    interface LikeView{
+        fun likeResult(likeCount: Int, dynamic: Dynamic)
+    }
+
     fun publish(dynamic: Dynamic)
 
     fun load(limit: Int)
+
+    fun like(dynamic: Dynamic)
 }

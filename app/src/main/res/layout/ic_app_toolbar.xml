@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    style="@style/Toolbar.App">
+
+    <TextView
+        android:id="@+id/tv_titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_18_size" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/toolbar_right_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:onClick="onClickRightButton"
+        android:padding="@dimen/layout_small_padding"
+        android:text="发布"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_16_size"
+        android:visibility="gone" />
+
+</android.support.v7.widget.Toolbar>

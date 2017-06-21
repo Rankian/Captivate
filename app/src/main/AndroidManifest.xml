@@ -70,6 +70,12 @@
             android:windowSoftInputMode="stateVisible|stateHidden|adjustPan" />
 
         <activity
+            android:name=".ui.activity.user.RetrievePasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateVisible|stateHidden|adjustPan" />
+
+        <activity
             android:name=".ui.activity.user.UserCenterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
@@ -89,6 +95,24 @@
 
         <activity
             android:name=".ui.activity.dynamic.PublishDynamicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateVisible|stateHidden|adjustPan" />
+
+        <activity
+            android:name=".ui.activity.app.AppActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateVisible|stateHidden|adjustPan" />
+
+        <activity
+            android:name=".ui.activity.TitleItemDecorationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateVisible|stateHidden|adjustPan" />
+
+        <activity
+            android:name=".ui.activity.app.AppDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="stateVisible|stateHidden|adjustPan" />

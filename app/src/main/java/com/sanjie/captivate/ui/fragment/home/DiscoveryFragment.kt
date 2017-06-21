@@ -7,22 +7,25 @@ import com.sanjie.captivate.base.BaseFragment
 import com.sanjie.captivate.mvp.impl.AdvertisingPresenterImpl
 import com.sanjie.captivate.mvp.impl.WeatherPresenterImpl
 import com.sanjie.captivate.mvp.model.Advertising
-import com.sanjie.captivate.mvp.model.Notice
 import com.sanjie.captivate.mvp.model.Weather
 import com.sanjie.captivate.mvp.presenter.AdvertisingPresenter
 import com.sanjie.captivate.mvp.presenter.WeatherPresenter
 import com.sanjie.captivate.util.AMapUtils
 import com.sanjie.captivate.util.GlideImageLoader
+import com.sanjie.zy.utils.ZYDateUtils
+import com.sanjie.zy.utils.log.ZYLog
 import com.sanjie.zy.widget.ZYToast
 import com.sanjie.zy.widget.banner.BannerConfig
 import com.sanjie.zy.widget.banner.Transformer
 import io.reactivex.Observable
+import io.reactivex.rxkotlin.toObservable
 import kotlinx.android.synthetic.main.fragment_discovery.*
 import kotlinx.android.synthetic.main.include_fragment_title_bar.*
 import kotlinx.android.synthetic.main.include_weather_layout.*
 import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Created by SanJie on 2017/5/11.
@@ -36,7 +39,7 @@ class DiscoveryFragment : BaseFragment(), AdvertisingPresenter.View, WeatherPres
     var advertisingPresenter: AdvertisingPresenter? = null
     var weatherPresenter: WeatherPresenter? = null
 
-    val dateFormat = SimpleDateFormat("yyyyMMdd")
+    val dateFormat = SimpleDateFormat("yyyyMMdd", Locale.CHINA)
 
     var locationCity = ""
 
@@ -61,7 +64,7 @@ class DiscoveryFragment : BaseFragment(), AdvertisingPresenter.View, WeatherPres
         startLocation()
     }
 
-    fun startLocation(){
+    fun startLocation() {
         AMapUtils().with(this)
                 .startLocation()
                 .subscribe {
@@ -111,17 +114,26 @@ class DiscoveryFragment : BaseFragment(), AdvertisingPresenter.View, WeatherPres
     }
 
     fun showFutureWeather(futureObject: JSONObject) {
+        /*
+        获取未来三天日期
+        key
+         */
+        val keys = ArrayList<String>()
+        futureObject.keys().toObservable()
+                .take(3)
+                .subscribe {
+                    keys.add(it)
+                }
+
         discovery_weather_future_list_view.removeAllViews()
         for (i in 0..2) {
             val view = activity.layoutInflater.inflate(R.layout.item_discovery_future_weather, null)
-            val dateTv = view.findViewById(R.id.item_future_weather_date_tv) as AppCompatTextView
-            val infoTv = view.findViewById(R.id.item_future_weather_info_tv) as AppCompatTextView
-            val tempTv = view.findViewById(R.id.item_future_weather_temp_tv) as AppCompatTextView
-            val underLine = view.findViewById(R.id.item_future_weather_under_line) as AppCompatTextView
+            val dateTv = view.findViewById<AppCompatTextView>(R.id.item_future_weather_date_tv)
+            val infoTv = view.findViewById<AppCompatTextView>(R.id.item_future_weather_info_tv)
+            val tempTv = view.findViewById<AppCompatTextView>(R.id.item_future_weather_temp_tv)
+            val underLine = view.findViewById<AppCompatTextView>(R.id.item_future_weather_under_line)
 
-            val date = dateFormat.format(Date()).toInt() + i
-            val key = "day_$date"
-            val `object` = futureObject.optJSONObject(key)
+            val `object` = futureObject.optJSONObject(keys[i])
 
             when (i) {
                 0 -> {

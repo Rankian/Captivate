@@ -4,11 +4,15 @@ import android.support.v7.widget.LinearLayoutManager
 import com.sanjie.captivate.R
 import com.sanjie.captivate.adapter.TravelAdapter
 import com.sanjie.captivate.base.BaseFragment
+import com.sanjie.captivate.common.AppConfig
 import com.sanjie.captivate.mvp.impl.DownloadFilePresenterImpl
 import com.sanjie.captivate.mvp.impl.TravelPresenterImpl
 import com.sanjie.captivate.mvp.model.Travel
 import com.sanjie.captivate.mvp.presenter.DownloadFilePresenter
 import com.sanjie.captivate.mvp.presenter.TravelPresenter
+import com.sanjie.zy.http.download.DownloadInfo
+import com.sanjie.zy.http.download.DownloadRetrofitManager
+import com.sanjie.zy.http.listener.HttpProgressOnNextListener
 import com.sanjie.zy.widget.ActionSheetDialog
 import com.sanjie.zy.widget.ZYToast
 import kotlinx.android.synthetic.main.fragment_travel.*
@@ -30,6 +34,8 @@ class TravelFragment : BaseFragment(), TravelPresenter.View, DownloadFilePresent
     var travelList: ArrayList<Travel> = ArrayList()
     var mAdapter: TravelAdapter? = null
 
+    var downloadManager: DownloadRetrofitManager? = null
+
     override fun getLayoutId(): Int {
         return R.layout.fragment_travel
     }
@@ -40,10 +46,10 @@ class TravelFragment : BaseFragment(), TravelPresenter.View, DownloadFilePresent
 
         mAdapter = TravelAdapter(activity, travel_recycler_view, travelList)
         mAdapter!!.isLoadMore(false)
-//        mAdapter!!.setOnItemLongClickListener { v, position ->
-//            showSavePhoto(travelList[position].downloadUrl!!)
-//            false
-//        }
+        mAdapter!!.setOnItemLongClickListener { v, position ->
+            showSavePhoto(travelList[position].photoUrl!!)
+            false
+        }
         travel_recycler_view.layoutManager = LinearLayoutManager(activity)
         travel_recycler_view.adapter = mAdapter
 
@@ -54,6 +60,9 @@ class TravelFragment : BaseFragment(), TravelPresenter.View, DownloadFilePresent
     }
 
     override fun processLogic() {
+
+        downloadManager = DownloadRetrofitManager.getInstance()
+
         downloadPresenter = DownloadFilePresenterImpl(this)
         travelPresenter = TravelPresenterImpl(this)
         travelPresenter!!.loadTravel()
@@ -73,12 +82,35 @@ class TravelFragment : BaseFragment(), TravelPresenter.View, DownloadFilePresent
     }
 
     private fun showSavePhoto(url: String) {
+
+        val info = DownloadInfo(url)
+        info.savePath = AppConfig.FILE_STORE_BASE_PATH + "photo/" + System.currentTimeMillis() + ".jpg"
+        info.listener = listener
+
         ActionSheetDialog(activity).builder()
                 .setTitle("温馨提示")
                 .setCancelable(false)
                 .addSheetItem("保存图片", resources.getColor(R.color.main_color), {
-                    downloadPresenter!!.download(url)
+                    downloadManager!!.startDownload(info)
                 })
                 .show()
+    }
+
+    internal var listener: HttpProgressOnNextListener<*> = object : HttpProgressOnNextListener<DownloadInfo>() {
+        override fun onNext(info: DownloadInfo) {
+            ZYToast.info("图片保存成功")
+        }
+
+        override fun onStart() {
+
+        }
+
+        override fun onComplete() {
+
+        }
+
+        override fun updateProgress(l: Long, l1: Long) {
+
+        }
     }
 }

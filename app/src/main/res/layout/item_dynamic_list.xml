@@ -102,6 +102,7 @@
             android:background="@color/gray_80" />
 
         <LinearLayout
+            android:id="@+id/item_dynamic_comment_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -130,6 +131,7 @@
             android:background="@color/gray_80" />
 
         <LinearLayout
+            android:id="@+id/item_dynamic_like_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -8,6 +8,7 @@ import com.sanjie.zy.base.ZYApplication
 import com.sanjie.zy.common.ZYActivityStack
 import com.sanjie.zy.picture.ZYPicturePicker
 import com.sanjie.zy.utils.log.ZYLog
+import com.tencent.bugly.crashreport.CrashReport
 
 /**
  * Created by LangSanJie on 2017/4/12.
@@ -20,6 +21,7 @@ class CapApplication : ZYApplication() {
         Bmob.initialize(this,AppConfig.BMOB_APP_ID)
         BmobSMS.initialize(this,AppConfig.BMOB_APP_ID)
         ZYPicturePicker.init(GlidePicturePickerLoader())
+        CrashReport.initCrashReport(applicationContext,"b04d935e6a",true)
     }
 
 

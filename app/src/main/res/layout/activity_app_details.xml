@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/ic_app_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/app_details_icon_iv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_app_icon_background"
+                    android:src="@mipmap/icon_qq" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/app_details_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/layout_normal_padding"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_16_size"
+                    tools:text="QQ" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/app_details_software_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/layout_small_padding"
+                        android:textColor="@color/gray_110"
+                        android:textSize="@dimen/font_12_size"
+                        tools:text="42.8 M" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="0.8dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/layout_small_margin"
+                        android:background="@color/gray_40" />
+
+                    <RatingBar
+                        android:id="@+id/app_details_score_rb"
+                        style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        tools:rating="3.5" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--正文-->
+            <include layout="@layout/include_app_details_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

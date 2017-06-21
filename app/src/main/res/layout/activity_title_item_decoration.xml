@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:index_bar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <include layout="@layout/ic_toolbar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/title_item_decoration_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"/>
+
+        <com.sanjie.captivate.view.IndexBar
+            android:id="@+id/title_item_decoration_index_bar"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            index_bar:pressBackground="@color/translucent_100"
+            android:layout_marginTop="@dimen/layout_large_margin"
+            android:layout_marginBottom="@dimen/layout_large_margin"
+            index_bar:textColor="@color/main_color"
+            index_bar:textSize="16sp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/title_item_decoration_SideBarHint_tv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_side_bar_background"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="48sp"
+            android:visibility="gone"
+            tools:text="A"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+</LinearLayout>

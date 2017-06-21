@@ -38,6 +38,17 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
+    <style name="Toolbar.App">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/holo_orange_light</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:paddingLeft">@dimen/layout_small_padding</item>
+        <item name="android:paddingRight">@dimen/layout_small_padding</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
     <!--侧滑菜单项-->
     <style name="menuTextStyle">
         <item name="android:textColor">@color/gold</item>

@@ -1,6 +1,7 @@
 package com.sanjie.captivate.ui.fragment.home
 
 import android.view.View
+import android.widget.ImageView
 import cn.bmob.v3.BmobUser
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding2.view.RxView

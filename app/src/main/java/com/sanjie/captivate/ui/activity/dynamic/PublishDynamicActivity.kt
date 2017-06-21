@@ -5,10 +5,7 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import cn.bmob.v3.BmobUser
-import com.jakewharton.rxbinding2.support.v7.widget.RxRecyclerView
-import com.jakewharton.rxbinding2.support.v7.widget.RxToolbar
 import com.jakewharton.rxbinding2.view.RxView
-import com.jakewharton.rxbinding2.widget.RxAdapterView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.sanjie.captivate.R
 import com.sanjie.captivate.adapter.PublishPhotoAdapter
@@ -28,7 +25,6 @@ import com.sanjie.zy.utils.ZYKeyboardUtils
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil
 import com.sanjie.zy.widget.ZYLoadingDialog
 import com.sanjie.zy.widget.ZYToast
-import io.reactivex.rxkotlin.toObservable
 import kotlinx.android.synthetic.main.activity_publish_dynamic.*
 import java.util.concurrent.TimeUnit
 
@@ -106,7 +102,7 @@ class PublishDynamicActivity : BaseActivity(), DynamicPresenter.PublishView {
             ZYToast.warning("还是说点儿什么吧")
             return false
         }
-        if(content.length > 300){
+        if (content.length > 300) {
             ZYToast.warning("说得太多可不是好事噢")
             return false
         }
@@ -121,19 +117,17 @@ class PublishDynamicActivity : BaseActivity(), DynamicPresenter.PublishView {
                 .throttleFirst(2, TimeUnit.SECONDS)
                 .subscribe {
                     ZYPicturePicker.of()
-                            .camera(false)
+                            .camera(true)
                             .single(false)
                             .limit(9 - photoList!!.size)
                             .start(this@PublishDynamicActivity)
                             .compose(TransformUtils.defaultNewThreadSchedulers())
                             .map {
-                                val list = ArrayList<String>()
-                                it.toObservable()
-                                        .compose(TransformUtils.defaultSchedulers())
-                                        .subscribe {
-                                            list.add(it.path)
-                                        }
-                                list
+                                val pathList = ArrayList<String>()
+                                it.forEach {
+                                    pathList.add(it.path)
+                                }
+                                pathList
                             }.subscribe {
                         photoList!!.addAll(it)
                         if (photoList!!.size == 9) {
@@ -149,11 +143,7 @@ class PublishDynamicActivity : BaseActivity(), DynamicPresenter.PublishView {
                 .map { it.text().toString() }
                 .subscribe {
                     publish_dynamic_content_count_tv.text = "${it.length}/300"
-                    if (it.length > 300) {
-                        publish_dynamic_content_count_tv.setTextColor(resources.getColor(R.color.red))
-                    }else{
-                        publish_dynamic_content_count_tv.setTextColor(resources.getColor(R.color.gray_80))
-                    }
+                    publish_dynamic_content_count_tv.setTextColor(resources.getColor(if (it.length > 300) R.color.red else R.color.gray_80))
                 }
     }
 

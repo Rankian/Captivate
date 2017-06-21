@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/layout_small_padding"
+    tools:showIn="@layout/activity_app_details">
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/app_details_intro_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/layout_small_padding"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_14_size"
+        tools:text="乐在沟通17年，聊天欢乐9亿人" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/app_details_screenshot_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_small_margin"
+        android:scrollbars="none"
+        android:overScrollMode="never"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_small_padding"
+        android:text="应用描述"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_14_size" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/app_details_introduction_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_small_padding"
+        android:textColor="@color/gray_120"
+        android:textSize="@dimen/font_12_size"
+        tools:text="乐在沟通17年，聊天欢乐9亿人" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_small_padding"
+        android:text="其他信息"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_14_size" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/app_details_developer_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="@dimen/layout_small_padding"
+        android:textColor="@color/gray_120"
+        android:textSize="@dimen/font_12_size"
+        tools:text="开发者：深圳市腾讯计算机系统有限公司" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/app_details_update_date_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="@dimen/layout_small_padding"
+        android:textColor="@color/gray_120"
+        android:textSize="@dimen/font_12_size"
+        tools:text="更新时间：2017年06月09日" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/app_details_version_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="@dimen/layout_small_padding"
+        android:textColor="@color/gray_120"
+        android:textSize="@dimen/font_12_size"
+        tools:text="版本：7.1.0" />
+
+
+</LinearLayout>

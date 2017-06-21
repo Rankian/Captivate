@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.bumptech.glide.Glide
 import com.sanjie.captivate.R
+import com.sanjie.captivate.util.LogUtils
 import com.sanjie.zy.adpter.ZYRecyclerViewAdapter
 import com.sanjie.zy.adpter.ZYViewHolder
 

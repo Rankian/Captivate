@@ -14,7 +14,7 @@ class GlidePicturePickerLoader : ZYPickerImageLoader {
                 .load(path)
                 .error(com.sanjie.zy.R.drawable.ic_preview_image)
                 .centerCrop()
-                .override(width, height)
+                .override(width,height)
                 .into(imageView)
     }
 }

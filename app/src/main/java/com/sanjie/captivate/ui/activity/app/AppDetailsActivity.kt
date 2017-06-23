@@ -7,7 +7,7 @@ import com.sanjie.captivate.adapter.AppScreenshotAdapter
 import com.sanjie.captivate.base.BaseActivity
 import com.sanjie.captivate.mvp.model.App
 import com.sanjie.zy.adpter.decoration.DividerDecoration
-import com.sanjie.zy.utils.ZYDensityUtils
+import com.sanjie.zy.utils.ZYDisplayUtils
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil
 import kotlinx.android.synthetic.main.activity_app_details.*
 import kotlinx.android.synthetic.main.include_app_details_content.*

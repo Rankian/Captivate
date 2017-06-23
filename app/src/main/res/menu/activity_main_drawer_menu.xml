@@ -7,6 +7,10 @@
             android:icon="@mipmap/icon_collection"
             android:title="应用中心" />
         <item
+            android:id="@+id/video_menu"
+            android:icon="@mipmap/icon_menu_video"
+            android:title="视频中心" />
+        <item
             android:id="@+id/set_menu"
             android:icon="@mipmap/icon_option"
             android:title="个性设置" />

@@ -9,7 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.TypedValue
 import android.view.View
-import com.sanjie.zy.utils.ZYDensityUtils
+import com.sanjie.zy.utils.ZYDisplayUtils
 
 /**
  * Created by SanJie on 2017/6/20.
@@ -97,7 +97,7 @@ class TitleItemDecoration : RecyclerView.ItemDecoration {
         c!!.drawRect(parent.paddingLeft.toFloat(), parent.paddingTop.toFloat(), parent.right - parent.paddingRight.toFloat(), parent.top + mTitleHeight!!.toFloat(), mPaint)
         mPaint!!.color = COLOR_TITLE_FONT
         mPaint!!.getTextBounds(tag!!, 0, tag.length, mBounds)
-        c.drawText(tag, parent.paddingLeft.toFloat() + ZYDensityUtils.dp2px(15F), parent.paddingTop + mTitleHeight!! - (mTitleHeight!! / 2 - mBounds!!.height() / 2).toFloat(), mPaint)
+        c.drawText(tag, parent.paddingLeft.toFloat() + ZYDisplayUtils.dp2px(15F), parent.paddingTop + mTitleHeight!! - (mTitleHeight!! / 2 - mBounds!!.height() / 2).toFloat(), mPaint)
     }
 
     override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {

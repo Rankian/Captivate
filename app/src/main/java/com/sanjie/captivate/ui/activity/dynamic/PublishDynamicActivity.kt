@@ -18,10 +18,7 @@ import com.sanjie.captivate.mvp.model.User
 import com.sanjie.captivate.mvp.presenter.DynamicPresenter
 import com.sanjie.captivate.util.SystemUtils
 import com.sanjie.zy.picture.ZYPicturePicker
-import com.sanjie.zy.utils.RxBus
-import com.sanjie.zy.utils.ZYDensityUtils
-import com.sanjie.zy.utils.ZYEmptyUtils
-import com.sanjie.zy.utils.ZYKeyboardUtils
+import com.sanjie.zy.utils.*
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil
 import com.sanjie.zy.widget.ZYLoadingDialog
 import com.sanjie.zy.widget.ZYToast
@@ -58,7 +55,7 @@ class PublishDynamicActivity : BaseActivity(), DynamicPresenter.PublishView {
         loadingDialog = ZYLoadingDialog(this)
 
         photoList = ArrayList()
-        photoAdapter = PublishPhotoAdapter(this@PublishDynamicActivity, publish_dynamic_photo_recycler_view, photoList!!, ZYDensityUtils.getScreenWidth() / 3)
+        photoAdapter = PublishPhotoAdapter(this@PublishDynamicActivity, publish_dynamic_photo_recycler_view, photoList!!, ZYDisplayUtils.getScreenWidth() / 3)
         photoAdapter!!.isLoadMore(false)
         photoAdapter!!.setDeleteListener(object : PublishPhotoAdapter.OnPhotoDeleteListener {
             override fun delete(position: Int) {

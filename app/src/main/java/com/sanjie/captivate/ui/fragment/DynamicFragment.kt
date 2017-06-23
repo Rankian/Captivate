@@ -13,7 +13,7 @@ import com.sanjie.captivate.mvp.presenter.DynamicPresenter
 import com.sanjie.zy.adpter.ZYRecyclerViewAdapter
 import com.sanjie.zy.adpter.decoration.DividerDecoration
 import com.sanjie.zy.utils.RxBus
-import com.sanjie.zy.utils.ZYDensityUtils
+import com.sanjie.zy.utils.ZYDisplayUtils
 import com.sanjie.zy.widget.ZYToast
 import kotlinx.android.synthetic.main.fragment_dynamic.*
 import kotlinx.android.synthetic.main.include_fragment_title_bar.*
@@ -42,7 +42,7 @@ class DynamicFragment : BaseFragment(), DynamicPresenter.LoadView, DynamicPresen
         mAdapter = DynamicAdapter(activity, dynamic_recycler_view, dynamicList!!)
         mAdapter!!.isLoadMore(false)
         dynamic_recycler_view.layoutManager = LinearLayoutManager(activity)
-        dynamic_recycler_view.addItemDecoration(DividerDecoration(activity.resources.getColor(R.color.gray_30), ZYDensityUtils.dp2px(3F)))
+        dynamic_recycler_view.addItemDecoration(DividerDecoration(activity.resources.getColor(R.color.gray_30), ZYDisplayUtils.dp2px(3F)))
         dynamic_recycler_view.adapter = mAdapter
 
         dynamic_swipe_refresh_layout.setColorSchemeResources(R.color.main_color)

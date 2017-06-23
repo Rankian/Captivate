@@ -18,6 +18,7 @@ import com.sanjie.captivate.mvp.model.User
 import com.sanjie.captivate.ui.activity.app.AppActivity
 import com.sanjie.captivate.ui.activity.dynamic.PublishDynamicActivity
 import com.sanjie.captivate.ui.activity.user.UserCenterActivity
+import com.sanjie.captivate.ui.activity.video.VideoActivity
 import com.sanjie.captivate.ui.fragment.DynamicFragment
 import com.sanjie.captivate.ui.fragment.home.DiscoveryFragment
 import com.sanjie.captivate.ui.fragment.home.MusicFragment
@@ -115,6 +116,7 @@ class MainActivity : BaseActivity() {
         navigation_view.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.app_menu -> forwardActivity(AppActivity::class.java, null)
+                R.id.video_menu -> forwardActivity(VideoActivity::class.java, null)
                 R.id.set_menu -> ZYToast.info("想设置，没门儿")
                 R.id.suggest_menu -> forwardActivity(TitleItemDecorationActivity::class.java, null)
                 R.id.update_menu -> {

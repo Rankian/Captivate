@@ -28,7 +28,7 @@
             android:layout_marginTop="@dimen/layout_large_margin"
             android:layout_marginBottom="@dimen/layout_large_margin"
             index_bar:textColor="@color/main_color"
-            index_bar:textSize="16sp"/>
+            index_bar:textSize="14sp"/>
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/title_item_decoration_SideBarHint_tv"

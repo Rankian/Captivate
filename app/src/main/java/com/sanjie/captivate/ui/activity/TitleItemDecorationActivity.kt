@@ -8,7 +8,7 @@ import com.sanjie.captivate.view.decoration.TitleItemDecoration
 import com.sanjie.zy.adpter.ZYRecyclerViewAdapter
 import com.sanjie.zy.adpter.ZYViewHolder
 import com.sanjie.zy.adpter.decoration.DividerDecoration
-import com.sanjie.zy.utils.ZYDensityUtils
+import com.sanjie.zy.utils.ZYDisplayUtils
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil
 import kotlinx.android.synthetic.main.activity_title_item_decoration.*
 
@@ -36,7 +36,7 @@ class TitleItemDecorationActivity : BaseActivity() {
         initDatas(resources.getStringArray(R.array.provinces))
         title_item_decoration_recycler_view.adapter = CityAdapter()
         title_item_decoration_recycler_view.addItemDecoration(TitleItemDecoration(this, mDatas!!))
-        title_item_decoration_recycler_view.addItemDecoration(DividerDecoration(resources.getColor(R.color.gray_30), ZYDensityUtils.dp2px(1F)))
+        title_item_decoration_recycler_view.addItemDecoration(DividerDecoration(resources.getColor(R.color.gray_30), ZYDisplayUtils.dp2px(1F)))
 
         title_item_decoration_index_bar.setPressedShowTextView(title_item_decoration_SideBarHint_tv)
                 .setNeedRealIndex(true)

@@ -12,7 +12,7 @@ import com.sanjie.captivate.mvp.model.Dynamic
 import com.sanjie.zy.adpter.ZYRecyclerViewAdapter
 import com.sanjie.zy.adpter.ZYViewHolder
 import com.sanjie.zy.utils.ZYDateUtils
-import com.sanjie.zy.utils.ZYDensityUtils
+import com.sanjie.zy.utils.ZYDisplayUtils
 import com.sanjie.zy.utils.ZYFormatTimeUtils
 import com.sanjie.zy.widget.view.ZYCircleImageView
 import java.util.concurrent.TimeUnit
@@ -38,7 +38,7 @@ class DynamicAdapter(val context: Context, recyclerView: RecyclerView, dataList:
             photosRecyclerView.visibility = View.GONE
         }
 
-        photosRecyclerView.adapter = DynamicPhotosAdapter(context, photosRecyclerView, photos, ZYDensityUtils.getScreenWidth() / 3)
+        photosRecyclerView.adapter = DynamicPhotosAdapter(context, photosRecyclerView, photos, ZYDisplayUtils.getScreenWidth() / 3)
         val gridManager = GridLayoutManager(context, 3)
         gridManager.isAutoMeasureEnabled = true
         photosRecyclerView.layoutManager = gridManager

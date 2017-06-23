@@ -9,7 +9,7 @@ import com.sanjie.captivate.mvp.impl.AppPresenterImpl
 import com.sanjie.captivate.mvp.model.App
 import com.sanjie.captivate.mvp.presenter.AppPresenter
 import com.sanjie.zy.adpter.decoration.DividerDecoration
-import com.sanjie.zy.utils.ZYDensityUtils
+import com.sanjie.zy.utils.ZYDisplayUtils
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil
 import kotlinx.android.synthetic.main.activity_app.*
 
@@ -38,7 +38,7 @@ class AppActivity : BaseActivity(), AppPresenter.View {
         appAdapter = AppAdapter(this, app_recycler_view, appList!!)
         appAdapter!!.isLoadMore(false)
         app_recycler_view.layoutManager = LinearLayoutManager(this)
-        app_recycler_view.addItemDecoration(DividerDecoration(resources.getColor(R.color.gray_30), ZYDensityUtils.dp2px(1F)))
+        app_recycler_view.addItemDecoration(DividerDecoration(resources.getColor(R.color.gray_30), ZYDisplayUtils.dp2px(1F)))
         app_recycler_view.adapter = appAdapter
         appAdapter!!.setOnItemClickListener { view, i ->
             val app = appList!![i]

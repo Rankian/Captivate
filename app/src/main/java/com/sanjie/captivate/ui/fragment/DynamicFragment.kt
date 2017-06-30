@@ -74,6 +74,10 @@ class DynamicFragment : BaseFragment(), DynamicPresenter.LoadView, DynamicPresen
                 dynamicPresenter!!.like(dynamicList!![position])
             }
         })
+
+        mAdapter!!.setOnLambdaListener {
+            ZYToast.warning("lambda:$it")
+        }
     }
 
     override fun processLogic() {

@@ -24,8 +24,6 @@ class RetrofitManager {
         return retrofit!!.create(DownloadApi::class.java)
     }
 
-
-
     constructor() {
         retrofit = Retrofit.Builder()
                 .baseUrl(AppConfig.API_URL)

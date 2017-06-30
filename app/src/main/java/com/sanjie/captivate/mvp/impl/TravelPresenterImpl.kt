@@ -11,6 +11,7 @@ class TravelPresenterImpl(val travelView: TravelPresenter.View): TravelPresenter
 
     override fun loadTravel() {
         BmobQuery<Travel>()
+                .order("-createdAt")
                 .findObjectsObservable(Travel::class.java)
                 .subscribe {
                     travelView.travelResult(it)

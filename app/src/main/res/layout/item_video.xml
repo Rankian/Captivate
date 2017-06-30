@@ -29,7 +29,7 @@
                 android:layout_height="200dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="@color/translucent_20_black">
+                android:background="@color/translucent_20_white">
 
                 <android.support.v7.widget.AppCompatImageView
                     android:layout_width="wrap_content"

@@ -1,6 +1,7 @@
 package com.sanjie.captivate.adapter
 
 import android.content.Context
+import android.support.v7.view.menu.MenuView
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -24,6 +25,7 @@ class DynamicAdapter(val context: Context, recyclerView: RecyclerView, dataList:
         ZYRecyclerViewAdapter<Dynamic>(recyclerView, dataList, R.layout.item_dynamic_list) {
 
     var listener: OnOperateListener? = null
+    var lambdaListener: OnLambdaListener? = null
 
     override fun bindData(holder: ZYViewHolder?, data: Dynamic?, position: Int) {
         /*
@@ -49,6 +51,7 @@ class DynamicAdapter(val context: Context, recyclerView: RecyclerView, dataList:
         val forwardingBtn = holder.getView<LinearLayout>(R.id.item_dynamic_forwarding_btn)
         val commentBtn = holder.getView<LinearLayout>(R.id.item_dynamic_comment_btn)
         val likeBtn = holder.getView<LinearLayout>(R.id.item_dynamic_like_btn)
+        val lambdaBtn = holder.getView<LinearLayout>(R.id.item_dynamic_lambda_btn)
 
         RxView.clicks(forwardingBtn)
                 .throttleFirst(2, TimeUnit.SECONDS)
@@ -72,6 +75,13 @@ class DynamicAdapter(val context: Context, recyclerView: RecyclerView, dataList:
                     }
                 }
 
+        RxView.clicks(lambdaBtn)
+                .subscribe {
+                    if(lambdaListener != null){
+                        lambdaListener!!.onLambda(position)
+                    }
+                }
+
         //头像
         Glide.with(context).load(data.authorAvatar).into(holder.getView<View>(R.id.item_dynamic_author_avatar_iv) as ZYCircleImageView)
         var publishDate = ZYFormatTimeUtils.getTimeSpanByNow1(ZYDateUtils.string2Millis(data.createdAt))
@@ -92,7 +102,19 @@ class DynamicAdapter(val context: Context, recyclerView: RecyclerView, dataList:
         fun onLike(position: Int)
     }
 
+    interface OnLambdaListener{
+        fun onLambda(position: Int)
+    }
+
     fun setOperateListener(operateListener: OnOperateListener) {
         this.listener = operateListener
+    }
+
+    fun setOnLambdaListener(f: (position: Int) -> Unit){
+        lambdaListener = object : OnLambdaListener{
+            override fun onLambda(position: Int) {
+                f(position)
+            }
+        }
     }
 }
